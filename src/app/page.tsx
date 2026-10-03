@@ -2,102 +2,97 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background text-foreground flex flex-col items-center p-8">
+      <main className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-10 space-y-10 border border-primary-200">
+        {/* Header Section */}
+        <header className="text-center pb-6 border-b-2 border-primary-300">
+          <h1 className="text-4xl font-bold text-primary leading-tight">Min Thu Kyaw</h1>
+          <p className="text-xl text-secondary mt-2">DevOps Engineer | Backend Developer | System Administrator</p>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Left Column (Contact, Skills) */}
+          <div className="md:col-span-1 space-y-8">
+            <section className="p-6 bg-white rounded-lg shadow-md border border-secondary-200">
+              <h2 className="text-2xl font-semibold text-primary mb-4 pb-2 border-b border-accent-300">Contact</h2>
+              <p className="text-md text-foreground">Email: <a href="mailto:your.email@example.com" className="text-primary hover:underline">your.email@example.com</a></p>
+              <p className="text-md text-foreground">Phone: (123) 456-7890</p>
+              <p className="text-md text-foreground">LinkedIn: <a href="#" className="text-primary hover:underline">linkedin.com/in/yourprofile</a></p>
+              <p className="text-md text-foreground">GitHub: <a href="#" className="text-primary hover:underline">github.com/yourprofile</a></p>
+            </section>
+
+            <section className="p-6 bg-white rounded-lg shadow-md border border-secondary-200">
+              <h2 className="text-2xl font-semibold text-primary mb-4 pb-2 border-b border-accent-300">Skills</h2>
+              <ul className="list-disc list-inside text-md text-foreground space-y-1">
+                <li><strong className="text-primary">Operating Systems</strong>: Linux (Ubuntu, CentOS, RHEL), Windows Server</li>
+                <li><strong className="text-primary">Cloud Platforms</strong>: AWS (EC2, S3, VPC, IAM, RDS), Azure, Google Cloud Platform</li>
+                <li><strong className="text-primary">Containerization</strong>: Docker, Kubernetes, Docker Swarm</li>
+                <li><strong className="text-primary">CI/CD</strong>: Jenkins, GitLab CI, GitHub Actions, Travis CI</li>
+                <li><strong className="text-primary">Configuration Management</strong>: Ansible, Puppet, Chef</li>
+                <li><strong className="text-primary">Monitoring & Logging</strong>: Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), Nagios</li>
+                <li><strong className="text-primary">Scripting</strong>: Bash, Python, PowerShell</li>
+                <li><strong className="text-primary">Databases</strong>: MySQL, PostgreSQL, MongoDB, Redis</li>
+                <li><strong className="text-primary">Web Servers</strong>: Nginx, Apache HTTP Server</li>
+                <li><strong className="text-primary">Networking</strong>: DNS, VPN, Load Balancing, Firewalls</li>
+                <li><strong className="text-primary">Version Control</strong>: Git, GitHub, GitLab, Bitbucket</li>
+                <li><strong className="text-primary">Backend Development</strong>: Node.js, Python (Django, Flask), Go, Java (Spring Boot)</li>
+                <li><strong className="text-primary">Infrastructure as Code (IaC)</strong>: Terraform, CloudFormation</li>
+                <li><strong className="text-primary">Virtualization</strong>: VMware, VirtualBox, KVM</li>
+                <li><strong className="text-primary">Security</strong>: SSL/TLS, VPN, Firewall management, Incident Response</li>
+              </ul>
+            </section>
+          </div>
+
+          {/* Right Column (Summary, Experience, Education) */}
+          <div className="md:col-span-2 space-y-8">
+            <section className="p-6 bg-white rounded-lg shadow-md border border-secondary-200">
+              <h2 className="text-2xl font-semibold text-primary mb-4 pb-2 border-b border-accent-300">Summary</h2>
+              <p className="text-md text-foreground leading-relaxed">
+                Highly skilled and dedicated DevOps Engineer and Backend Developer with extensive experience in designing, implementing, and maintaining robust and scalable server infrastructures.
+                Proficient in automating deployment pipelines, optimizing system performance, and ensuring high availability and security of critical applications.
+                Seeking to leverage expertise in cloud platforms, containerization, and backend technologies to drive innovation and operational excellence.
+              </p>
+            </section>
+
+            <section className="p-6 bg-white rounded-lg shadow-md border border-secondary-200">
+              <h2 className="text-2xl font-semibold text-primary mb-4 pb-2 border-b border-accent-300">Experience</h2>
+              <div className="mb-6 p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="text-xl font-medium text-foreground">Job Title, <span className="text-lg font-normal text-secondary">Company Name</span></h3>
+                <p className="text-sm text-secondary mb-2">Month Year – Month Year | City, State</p>
+                <ul className="list-disc list-inside text-md text-foreground space-y-1">
+                  <li>Description of your responsibilities and achievements. Focus on impact and results.</li>
+                  <li>Quantifiable results are highly encouraged. Example: Increased user engagement by 20% through a redesigned user interface.</li>
+                  <li>Collaborated with a team of 5 engineers to deliver features on time using Agile methodologies.</li>
+                </ul>
+              </div>
+              {/* Add more experience entries as needed */}
+              <div className="mb-6 p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="text-xl font-medium text-foreground">Another Job Title, <span className="text-lg font-normal text-secondary">Another Company</span></h3>
+                <p className="text-sm text-secondary mb-2">Month Year – Month Year | City, State</p>
+                <ul className="list-disc list-inside text-md text-foreground space-y-1">
+                  <li>Developed and maintained web applications using React and Node.js.</li>
+                  <li>Implemented RESTful APIs for data communication.</li>
+                  <li>Optimized application performance, reducing load times by 15%.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="p-6 bg-white rounded-lg shadow-md border border-secondary-200">
+              <h2 className="text-2xl font-semibold text-primary mb-4 pb-2 border-b border-accent-300">Education</h2>
+              <div className="mb-6 p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="text-xl font-medium text-foreground">Degree, Major, <span className="text-lg font-normal text-secondary">University Name</span></h3>
+                <p className="text-sm text-secondary mb-2">Year of Graduation | City, State</p>
+                <ul className="list-disc list-inside text-md text-foreground space-y-1">
+                  <li>Relevant coursework: Data Structures, Algorithms, Web Development.</li>
+                  <li>GPA: 3.8/4.0 (Optional)</li>
+                </ul>
+              </div>
+              {/* Add more education entries as needed */}
+            </section>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
